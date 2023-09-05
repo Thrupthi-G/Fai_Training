@@ -1,0 +1,4 @@
+﻿Menu:
+1.Add Student
+2.Display Students
+3.Delete from id"
