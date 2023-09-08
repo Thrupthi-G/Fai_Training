@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toll Plaza</title>
+    <link href="../styles/TollStyle.css" rel="stylesheet">
+    <script src="../scripts/tollPlaza.js" rel="stylesheet"></script>
+    <link src="../jQuery/jquery-3.7.1.min.js" rel="stylesheet">
+    <script>
+        function onAddFeature() {
+
+            const mgrObj = new AmtManager();
+
+            const no = Number($("#numPlate").val());
+
+            const type = $("#vehicletype").val();
+
+            const amt = Number($("#amt").val());
+
+            const add = new vehicles(no, type, amt);
+
+            mgrObj.addNewExpense(add);
+         
+            alert("Toll Details Added successfully");
+
+
+
+        }
+
+        const eventMapping = () => {
+
+            $("button").click(onAddFeature);
+
+
+
+        }
+
+        $().ready(() => {
+
+            eventMapping();
+
+        })
+    </script>
+</head>
+
+<body>
+    <h1>
+        <center>Navayuga Infrastructure</center>
+    </h1>
+    <hr>
+    <nav>
+        <a href="TollPlaza.html">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Statistics</a>
+    </nav>
+    <div>
+        <h2>Entry Vehicle</h2>
+        <form>
+            <p>
+                Enter the Licence Plate number: <input type="text" placeholder="Enter the vehicle number" id="numPlate">
+            </p>
+            <p>
+                Select the vehicle:<input list="txtvehi" id="vehicletype" placeholder="Enter the type" />
+                <datalist id="txtvehi">
+                    <option>Bike</option>
+                    <option>LMV</option>
+                    <option>HMV</option>
+                    <option>Heavy trucks</option>
+
+                </datalist>
+            </p>
+            <p>
+                Enter the Amount:<input type="number" id="amt" />
+            </p>
+            <button>Submit</button>
+        </form>
+    </div>
+    <div class="statistics">
+        <h2>Statistics</h2>
+        <ul id="statistics-list"></ul>
+    </div>
+    <div class="search">
+        <h2>Search</h2>
+        <label for="search-category">Filter by Category:</label>
+    </br>
+        <select id="search-category">
+            <option value="">All</option>
+            <option value="Bike">Bike</option>
+            <option value="LMV">LMV</option>
+            <option value="HMV">HMV</option>
+            <option value="HeavyTruck">Heavy Truck</option>
+        </select>
+    </br>
+        <label for="search-registration-number">Search Licence plate number:</label>
+        <input type="text" id="search-registration-number">
+        <br>
+        <button id="search-button" >Search</button>
+    </div>
+
+</body>
+
+</html>

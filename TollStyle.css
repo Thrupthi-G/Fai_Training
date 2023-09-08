@@ -1,0 +1,32 @@
+h1{
+    border-style: dashed;
+    background-color: brown;
+    color: beige;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border-color: chocolate;
+}
+body{
+    background-color: beige;
+}
+
+nav{
+    
+    text-align: center;
+    background-color: burlywood;
+}
+a{
+    width: 100px;
+    height:50px;
+    background-color: brown;
+    color: blanchedalmond;
+}
+
+a:hover{
+    width:100px;
+    height:50px;
+    background-color: brown;
+    color: blanchedalmond;
+
+}
